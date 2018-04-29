@@ -146,6 +146,8 @@ for(i in 1:(ncol(data))){
   dataset = cbind(dataset, data[[i]])
 }
 
+print(dataset)
+
 tree = decision_tree_building(dataset)
 
 # Three samples has been removed from iris dataset and put here
