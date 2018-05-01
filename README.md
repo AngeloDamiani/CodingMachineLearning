@@ -1,6 +1,26 @@
 # CodingMachineLearning
 In this repository I put all coded Machine Learning Algorithms I did from scratch. [Just for practice]
 ____________________
+### Linear Regression
+
+Simple linear regression implementation using residual sum of square as loss function. As can be easily proved, a vector β can be found to minimize
+
+<div style="text-align:center"><img src="./readme_pic/rss.gif"/></div>
+
+and this vector is determined by:
+
+<div style="text-align:center"><img src="./readme_pic/beta.gif"/></div>
+
+(Where X is the dataset matrix with a 1s-column as first column in order to have a bias β0 in the β vector and y is the label vector of the dataset)
+With that vector is possible to linear approximate a value y-hat from the sample features as
+
+<div style="text-align:center"><img src="./readme_pic/yhat.gif"/></div>
+
+where x is the new sample vector (with a 1 at begining for beta bias).
+For this implementation has been used this [dataset](http://people.sc.fsu.edu/~jburkardt/datasets/regression/x07.txt). It's about a mental retardation index and distrust index that psychiatrists assigned to their patients.
+
+
+
 
 ### Decision Tree
 Is a classical decision tree building in R. It filters questions using information gain for splitting branches and measure  impurity using Gini impurity.
