@@ -1,6 +1,7 @@
 # CodingMachineLearning
 In this repository I put all coded Machine Learning Algorithms I did from scratch. [Just for practice]
 ____________________
+
 ### Linear Regression
 
 Simple linear regression implementation using residual sum of square as loss function. As can be easily proved, a vector β can be found to minimize
@@ -19,8 +20,50 @@ With that vector is possible to linear approximate a value y-hat from the sample
 where x is the new sample vector (with a 1 at begining for beta bias).
 For this implementation has been used this [dataset](http://people.sc.fsu.edu/~jburkardt/datasets/regression/x07.txt). It's about a mental retardation index and distrust index that psychiatrists assigned to their patients.
 
+_________________________________________
+
+### Principal Component Analysis
+
+Simple Principal Component Analysis (PCA) implementation. It computes covariance matrix of data matrix (without using R's cov function) and takes its eigenvectors (sorting in reverse order their eigenvalues). Is possible to choose the number k of components  and pca's function will return the k eigenvectors related to the k biggest eigenvalues.
+
+There's also a "reduce" function to rotate the data (or a single individual) to this new space.
+
+So the sequence of the PCA computation is:
+
+* Scaling of dataset (in order to have means equal to zero for each original variable)
+
+* Covariance matrix computation
+
+<div style="text-align:center"><img src="./readme_pic/cov.gif"/></div>
+* Eigenvalues computation
+* Sorting of eigenvalues in descending order (no complex eigenvalues since the covariance matrix is symmetric)
+
+*  Computation of the eigenvectors αk of the k biggest eigenvalues
+
+<div style="text-align:center"><img src="./readme_pic/alphas.gif"/></div>
 
 
+<div style="text-align:center"><img src="./readme_pic/alpha.gif"/></div>
+
+* Eigenvectors' matrix
+
+<div style="text-align:center"><img src="./readme_pic/alpha_matrix.gif"/></div>
+
+* Sample's individual x
+
+<div style="text-align:center"><img src="./readme_pic/individual.gif"/></div>
+<div style="text-align:center"><img src="./readme_pic/ordim.gif"/></div>
+
+* Rotation of the individual to the k-dimensional space
+
+<div style="text-align:center"><img src="./readme_pic/rotation.gif"/></div>
+<div style="text-align:center"><img src="./readme_pic/rotationdim.gif"/></div>
+
+
+The used dataset is the [Iris Dataset](https://archive.ics.uci.edu/ml/datasets/iris). The dataset has been projected into a 2-dimensional space and the results can be seen in the following picture:
+
+<div style="text-align:center"><img src="./readme_pic/pca.png"/></div>
+_________________________________________
 
 ### Decision Tree
 Is a classical decision tree building in R. It filters questions using information gain for splitting branches and measure  impurity using Gini impurity.
